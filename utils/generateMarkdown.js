@@ -1,16 +1,38 @@
-// Create a license badge based on which license is passed in
+// Returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-// function renderLicenseLink(data) {
-//   if (data.license === "None") {
-//     const renderedLicenseSection = "";
-//   } else {
-//     const renderedLicenseSection = `https://img.shields.io/badge/license-${data.license}-blue.svg`;
-//   };
-// }
+function renderLicenseBadge(license) {
+  if (license !== "None") {
+    return `\n[License badge](https://img.shields.io/badge/license-${license}-blue.svg)\n`
+  } else {
+    return ""
+  }
+}
+
+// Returns the license link
+// If there is no license, returns an empty string
+function renderLicenseLink(license) {
+  if (license !== "None") {
+    return `\n* [License](#license)\n`
+  } else {
+    return ""
+  }
+}
+
+// Returns the license section of README
+// If there is no license, returns an empty string
+function renderLicenseSection(license) {
+  if (license !== "None") {
+    return   `\n## License
+
+    This project is licensed under the ${license} license.\n`
+  } else {
+    return ""
+  }
+}
 
 // Generate markdown for README
 function generateMarkdown(data) {  
-  return `# ${data.title}
+  return `# ${data.title} ${renderLicenseBadge(data.license)}
 
 ## Description
 
@@ -19,8 +41,7 @@ ${data.description}
 ## Table of Contents
 
 * [Installation](#installation)
-* [Usage](#usage)
-* [License](#license)
+* [Usage](#usage) ${renderLicenseLink(data.license)}
 * [Contributing](#contributing)
 * [Tests](#tests)
 * [Questions](#questions)
@@ -35,11 +56,7 @@ ${data.installation}
 
 ## Usage
 
-${data.usage}
-
-## License
-
-This project is licensed under the ${data.license} license.
+${data.usage} ${renderLicenseSection(data.license)}
 
 ## Contributing
 
