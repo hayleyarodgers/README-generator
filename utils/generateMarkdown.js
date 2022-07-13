@@ -1,20 +1,20 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Create a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseLink(data) {
+  if (data.license === "None") {
+    const renderedLicenseSection = "";
+  } else {
+    const renderedLicenseSection = `https://img.shields.io/badge/license-${data.license}-blue.svg`;
+  };
+}
 
 // Generate markdown for README
 function generateMarkdown(data) {
+  renderLicenseLink(data);
+  
   return `# ${data.title}
 
-![GitHub license](https://img.shields.io/badge/license-BSD_3-blue.svg)
+${renderedLicenseSection}
 
 ## Description
 
@@ -43,7 +43,7 @@ ${data.usage}
 
 ## License
 
-This project is licensed under the BSD 3 license.
+This project is licensed under the ${data.license} license.
 
 ## Contributing
 

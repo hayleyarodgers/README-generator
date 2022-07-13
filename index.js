@@ -67,7 +67,8 @@ inquirer
     ])
     .then((data) => {
         const mdPageContent = generateMarkdown(data);
-        writeToFile('README.md', );
+        console.log(mdPageContent);
+        // writeToFile('README.md', );
     });
 
 // TODO: Create a function to write README file
