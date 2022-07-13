@@ -67,12 +67,14 @@ inquirer
     ])
     .then((data) => {
         const mdPageContent = generateMarkdown(data);
-        console.log(mdPageContent);
-        // writeToFile('README.md', );
+        writeToFile('README.md', mdPageContent);
     });
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// Write README file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) =>
+    err ? console.log(err) : console.log('Successfully created README.md!'));
+}
 
 // TODO: Create a function to initialize app
 function init() {}

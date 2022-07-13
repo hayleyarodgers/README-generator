@@ -1,20 +1,16 @@
 // Create a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseLink(data) {
-  if (data.license === "None") {
-    const renderedLicenseSection = "";
-  } else {
-    const renderedLicenseSection = `https://img.shields.io/badge/license-${data.license}-blue.svg`;
-  };
-}
+// function renderLicenseLink(data) {
+//   if (data.license === "None") {
+//     const renderedLicenseSection = "";
+//   } else {
+//     const renderedLicenseSection = `https://img.shields.io/badge/license-${data.license}-blue.svg`;
+//   };
+// }
 
 // Generate markdown for README
-function generateMarkdown(data) {
-  renderLicenseLink(data);
-  
+function generateMarkdown(data) {  
   return `# ${data.title}
-
-${renderedLicenseSection}
 
 ## Description
 
