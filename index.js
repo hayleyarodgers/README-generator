@@ -65,8 +65,9 @@ inquirer
             message: 'What does the user need to know about contributing to the repo?'
         }
     ])
-    .then((answers) => {
-        const mdPageContent = generateMarkdown(answers);
+    .then((data) => {
+        const mdPageContent = generateMarkdown(data);
+        writeToFile('README.md', );
     });
 
 // TODO: Create a function to write README file
