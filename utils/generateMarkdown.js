@@ -1,18 +1,29 @@
 // Returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license !== "None") {
-    return `\n[License badge](https://img.shields.io/badge/license-${license}-blue.svg)\n`
-  } else {
+  switch(license) {
+    case "MIT":
+      return `\n\n[License badge](https://img.shields.io/badge/license-MIT-blue.svg)`;
+      break;
+    case "APACHE 2.0":
+      return `\n\n[License badge](https://img.shields.io/badge/license-APACHE2-blue.svg)`;
+      break;
+    case "GPL 3.0":
+      return `\n\n[License badge](https://img.shields.io/badge/license-GPL3-blue.svg)`;
+      break;
+    case "BSD 3":
+      return `\n\n[License badge](https://img.shields.io/badge/license-BSD3-blue.svg)`;
+      break;
+    case "None":
     return ""
-  }
+  };
 }
 
 // Returns the license link
 // If there is no license, returns an empty string
 function renderLicenseLink(license) {
   if (license !== "None") {
-    return `\n* [License](#license)\n`
+    return `\n* [License](#license)`
   } else {
     return ""
   }
@@ -22,9 +33,9 @@ function renderLicenseLink(license) {
 // If there is no license, returns an empty string
 function renderLicenseSection(license) {
   if (license !== "None") {
-    return   `\n## License
+    return `\n\n## License
 
-    This project is licensed under the ${license} license.\n`
+This project is licensed under the ${license} license.`
   } else {
     return ""
   }

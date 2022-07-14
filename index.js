@@ -3,21 +3,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
-// Array of questions for user input
-// Question: why did the starter code ask for this? Should it be used in the inquirer function?
-const questions = [
-    'What is your GitHub username?',
-    'What is your email address?',
-    'What is your project\'s name?',
-    'Please write a short description of your project.',
-    'What kind of license should your project have?',
-    'What command should be run to install dependencies?',
-    'What command should be run to run tests?',
-    'What does the user need to know about using the repo?',
-    'What does the user need to know about contributing to the repo?'
-];
-
-// Question: why is this a const? Why not just a function? ie. function promptUser(). Same principle inversed for init()
+// Questions user is asked in CLI
 const promptUser = () => {
     return inquirer.prompt([
         {
@@ -69,23 +55,7 @@ const promptUser = () => {
     ]);
 }
 
-// Previous .then under inquirer
-// .then((data) => {
-//     const mdPageContent = generateMarkdown(data);
-//     writeToFile('README.md', mdPageContent);
-// })
-
-// Write README file
-// function writeToFile(fileName, data) {
-//     fs.writeFile(fileName, data, (err) =>
-//     err ? console.log(err) : console.log('Successfully created README.md!'));
-// }
-
 // Initialize app
-// Based on starter code, using an init()
-// Question: why would we do an init() function, with the promptUser() function? Ie promise? This conflicts with having a separate writeToFile function??
-// The app works straight away with inquirer.prompt().then()?
-
 const init = () => {
     promptUser()
     .then((data) => fs.writeFileSync('README.md', generateMarkdown(data)))
