@@ -22,23 +22,17 @@ function renderLicenseBadge(license) {
 // Returns the license link
 // If there is no license, returns an empty string
 function renderLicenseLink(license) {
-  if (license !== "None") {
-    return `\n* [License](#license)`
-  } else {
-    return ""
-  }
+  const link = license !== "None" ? `\n* [License](#license)` : "";
+  return link
 }
 
 // Returns the license section of README
 // If there is no license, returns an empty string
 function renderLicenseSection(license) {
-  if (license !== "None") {
-    return `\n\n## License
+  const section = license !== "None" ? `\n\n## License
 
-This project is licensed under the ${license} license.`
-  } else {
-    return ""
-  }
+This project is licensed under the ${license} license.` : "";
+  return section
 }
 
 // Generate markdown for README
