@@ -15,7 +15,7 @@ function renderLicenseBadge(license) {
       return `\n\n[License badge](https://img.shields.io/badge/license-BSD3-blue.svg)`;
       break;
     case "None":
-    return ""
+    return "";
   };
 }
 
@@ -23,7 +23,7 @@ function renderLicenseBadge(license) {
 // If there is no license, returns an empty string
 function renderLicenseLink(license) {
   const link = license !== "None" ? `\n* [License](#license)` : "";
-  return link
+  return link;
 }
 
 // Returns the license section of README
@@ -32,7 +32,7 @@ function renderLicenseSection(license) {
   const section = license !== "None" ? `\n\n## License
 
 This project is licensed under the ${license} license.` : "";
-  return section
+  return section;
 }
 
 // Generate markdown for README
