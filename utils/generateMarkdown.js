@@ -3,16 +3,16 @@
 function renderLicenseBadge(license) {
   switch(license) {
     case "MIT":
-      return `\n\n[License badge](https://img.shields.io/badge/license-MIT-blue.svg)`;
+      return `\n\n![License badge](https://img.shields.io/badge/license-MIT-blue.svg)`;
       break;
     case "APACHE 2.0":
-      return `\n\n[License badge](https://img.shields.io/badge/license-APACHE2-blue.svg)`;
+      return `\n\n![License badge](https://img.shields.io/badge/license-APACHE2-blue.svg)`;
       break;
     case "GPL 3.0":
-      return `\n\n[License badge](https://img.shields.io/badge/license-GPL3-blue.svg)`;
+      return `\n\n![License badge](https://img.shields.io/badge/license-GPL3-blue.svg)`;
       break;
     case "BSD 3":
-      return `\n\n[License badge](https://img.shields.io/badge/license-BSD3-blue.svg)`;
+      return `\n\n![License badge](https://img.shields.io/badge/license-BSD3-blue.svg)`;
       break;
     case "None":
     return "";

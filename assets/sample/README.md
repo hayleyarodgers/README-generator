@@ -1,6 +1,6 @@
 # README-demo 
 
-[License badge](https://img.shields.io/badge/license-APACHE2-blue.svg)
+![License badge](https://img.shields.io/badge/license-APACHE2-blue.svg)
 
 ## Description
 
